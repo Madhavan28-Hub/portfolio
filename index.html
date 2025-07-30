@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Madhavan's Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      animation: slideDown 0.6s ease-in-out;
+    }
+
+    header .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    #hero {
+      background: linear-gradient(to right, #00bcd4, #0097a7);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fadeIn 1s ease-in;
+    }
+
+    .profile-pic {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      animation: popIn 1s ease-out;
+    }
+
+    .social-link {
+      color: #fff;
+      text-decoration: underline;
+      margin: 0 10px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .social-link:hover {
+      color: #ffe082;
+    }
+
+    .section {
+      padding: 60px 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.7s ease;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .project-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .project-card {
+      background: white;
+      padding: 20px;
+      flex: 1 1 calc(50% - 20px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background: #00bcd4;
+      color: white;
+      padding: 12px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #0097a7;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    /* Animation keyframes */
+    @keyframes slideDown {
+      from { transform: translateY(-100%); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes popIn {
+      0% { opacity: 0; transform: scale(0); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    .visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+
+    @media (max-width: 768px) {
+      .project-grid {
+        flex-direction: column;
+      }
+
+      .project-card {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container">
+      <h1>Madhavan</h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero">
+    <div class="container">
+      <img src="half.jpg" alt="Madhavan" class="profile-pic" />
+      <h2>Hi, I'm Madhavan</h2>
+      <p>Frontend Developer | 18 Years Old</p>
+      <a class="social-link" href="https://github.com/Madhavan28-Hub" target="_blank">GitHub</a>
+      <a class="social-link" href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm Madhavan, an 18-year-old frontend developer passionate about building responsive and interactive websites using HTML, CSS, and JavaScript. I enjoy learning new technologies and contributing to open-source projects.</p>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+          <h3>Project One</h3>
+          <p>A responsive landing page using HTML, CSS, and JS.</p>
+        </div>
+        <div class="project-card">
+          <h3>Project Two</h3>
+          <p>Interactive to-do list app with local storage support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p><strong>Name:</strong> Madhavan</p>
+      <p><strong>Email:</strong> <a href="mailto:madhavan.naasai@gmail.com">madhavan.naasai@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+918681851472">8681851472</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/Madhavan28-Hub" target="_blank">github.com/Madhavan28-Hub</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">linkedin.com/in/your-linkedin-id</a></p>
+
+      <form id="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Madhavan. All rights reserved. |
+    <a href="mailto:madhavan.naasai@gmail.com">Email Me</a> |
+    <a href="https://github.com/Madhavan28-Hub" target="_blank">GitHub</a> |
+    <a href="https://www.linkedin.com/in/your-linkedin-id" target="_blank">LinkedIn</a></p>
+  </footer>
+
+  <script>
+    // Scroll reveal animation
+    const sections = document.querySelectorAll('.section');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => observer.observe(section));
+
+    // Form handling
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you, your message has been sent!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
